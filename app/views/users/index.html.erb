@@ -1,0 +1,14 @@
+  <h1>一覧ページ</h1>
+
+  <% @users.each do |user| %>
+    <div>
+      <p><strong>名前:</strong> <%= user.first_name %></p>
+      <p><strong>苗字:</strong> <%= user.family_name %></p>
+    </div>
+
+    <!-- 詳細画面へのリンク -->
+    <%= link_to "詳細ページ", user_path(user.id) %>
+    <hr> <!-- 水平線で区切る --></hr>
+  <% end %>
+
+  <%= link_to "登録ページ", users_new_path %>
